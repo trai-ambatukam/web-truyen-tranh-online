@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>TRUYENHAY.VN</title>
+
+<style>
+*{
+    box-sizing:border-box;
+    font-family:'Segoe UI',Tahoma,sans-serif;
+}
+
+body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    background: linear-gradient(-45deg,#fbc2eb,#a6c1ee,#fddb92,#d1fdff);
+    background-size:400% 400%;
+    animation: gradientBG 15s ease infinite;
+    padding:0px;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.page-title{
+    text-align:center;
+    font-size:38px;
+    font-weight:700;
+    margin-bottom:40px;
+    color:#8e44ad;
+    letter-spacing:2px;
+    text-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+.subtitle{
+    text-align:center;
+    margin:-20px auto 40px auto;
+    color:#555;
+    font-weight:500;
+    text-transform:uppercase;
+
+    border-bottom:3px solid #ff7a00;
+    width:450px;
+    padding-bottom:8px;
+}
+.comic-container{
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+    flex:1;
+}
+
+.comic-card{
+    background:#ffffff;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,0.15);
+    text-align:center;
+    padding-bottom:20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comic-card:hover{
+    transform: translateY(-10px) scale(1.03);
+    box-shadow:0 25px 45px rgba(0,0,0,0.25);
+}
+
+.comic-image{
+    width:100%;
+    aspect-ratio:3/4;
+    overflow:hidden;
+    padding:13px 13px 0 13px;
+}
+.comic-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center;
+    border-radius:12px;
+}
+.comic-title{
+    font-size:20px;
+    font-weight:600;
+    margin-top:18px;
+    color:#333;
+}
+
+.comic-price{
+    margin:15px 0;
+    font-size:22px;
+    font-weight:bold;
+    color:#e74c3c;
+}
+
+.add-cart-btn{
+    border:none;
+    background:#2ecc71;
+    color:white;
+    padding:12px 30px;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-cart-btn:hover{
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:0 8px 18px rgba(0,0,0,0.25);
+}
+.section-title{
+    grid-column:1 / -1;
+    text-align:center;
+    margin:30px 0 10px 0;
+    position:relative;
+    scroll-margin-top: 40px;
+}
+
+.section-title h3{
+    display:inline-block;
+    padding:8px 25px;
+    background:#fff;
+    color:#ff7a00;
+    font-size:22px;
+    font-weight:700;
+    border-radius:20px;
+}
+
+.section-title::before{
+    content:"";
+    position:absolute;
+    top:50%;
+    left:0;
+    width:100%;
+    height:3px;
+    background:#ff7a00;
+    z-index:-1;
+}
+.banner{
+max-width:1200px;
+margin:0 auto 40px auto;
+}
+
+.banner img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.25);
+}
+.footer{
+background:#1f2937;
+color:#d1d5db;
+text-align:center;
+padding:10px 0;
+font-size:18px;
+letter-spacing:1px;
+margin-top:60px;
+
+}
+
+.footer-top{
+margin-top:80px;
+color:black;
+padding:40px 60px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+}
+
+.footer-col h3{
+margin-bottom:15px;
+border-bottom:2px solid white;
+display:inline-block;
+padding-bottom:5px;
+}
+
+.footer-col p{
+margin:8px 0;
+line-height:1.6;
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    background:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    z-index:999;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:1000;
+    background: linear-gradient(45deg,#ff7a00,#6a11cb);
+    -webkit-background-clip:text;
+    background-clip: text;
+    color:transparent;
+    cursor:pointer;
+}
+
+.menu a{
+    margin-left:25px;
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.menu a:hover{
+    color:#ff7a00;
+}
+html{
+    scroll-behavior:smooth;
+}
+
+.logo{
+    cursor:grab;
+}
+
+</style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">TruyenHay.VN</div>
+    <div class="menu">
+        <a href="#jp">Truyện Nhật</a>
+        <a href="#kr">Truyện Hàn</a>
+        <a href="#cn">Truyện Trung</a>
+        <a href="#contact">Liên hệ</a>
+    </div>
+</div>
+
+<h1 class="page-title">SHOP TRUYỆN HAY ONLINE</h1>
+<div style="text-align:center;">
+<h2 class="subtitle">CHÀO MỪNG ĐẾN VỚI TRANG WEB GIỚI THIỆU VÀ MUA BÁN TRUYỆN CỦA TRUYENHAY.COM</h2>
+</div>
+<div class="banner">
+<img src="images/banner.jpg" alt="banner">
+</div>
+
+<div class="comic-container" id="comicContainer"></div>
+
+<script>
+const comics=[
+
+{ name:"One Piece", price:259000, image:"images/1.jpg", type:"jp"},
+{ name:"Naruto", price:399000, image:"images/2.jpg", type:"jp"},
+{ name:"Dragon Ball", price:499000, image:"images/3.jpg", type:"jp"},
+{ name:"Attack on Titan", price:349000, image:"images/4.jpg", type:"jp"},
+{ name:"Demon Slayer", price:399000, image:"images/5.jpg", type:"jp"},
+{ name:"Fairy Tail", price:279000, image:"images/6.jpg", type:"jp"},
+
+{ name:"Solo Leveling", price:299000, image:"images/7.jpg", type:"kr"},
+{ name:"Lookism", price:209000, image:"images/8.jpg", type:"kr"},
+{ name:"Season of Blossom", price:189000, image:"images/9.jpg", type:"kr"},
+{ name:"Mercenary Enrollment", price:319000, image:"images/10.jpg", type:"kr"},
+{ name:"Bastard", price:149000, image:"images/11.jpg", type:"kr"},
+{ name:"Omniscient Reader", price:189000, image:"images/12.jpg", type:"kr"},
+
+{ name:"Ma Đạo Tổ Sư", price:719000, image:"images/13.jpg", type:"cn"},
+{ name:"Đấu La Đại Lục", price:110000, image:"images/14.jpg", type:"cn"},
+{ name:"Thiên Quan Tứ Phúc", price:130000, image:"images/15.jpg", type:"cn"},
+{ name:"Toàn Chức Cao Thủ", price:119000, image:"images/16.jpg", type:"cn"},
+{ name:"Võ Luyện Đỉnh Phong", price:109000, image:"images/17.jpg", type:"cn"},
+{ name:"Ta Là Tà Đế", price:139000, image:"images/18.jpg", type:"cn"}
+
+];
+
+const container=document.getElementById("comicContainer");
+
+function addSection(title, id){
+    const section=document.createElement("div");
+    section.className="section-title";
+    section.id=id;
+    section.innerHTML=`<h3>${title}</h3>`;
+    container.appendChild(section);
+}
+function addComic(comic){
+
+const card=document.createElement("div");
+card.className="comic-card";
+
+card.innerHTML=`
+<div class="comic-image">
+<img src="${comic.image}" alt="${comic.name}">
+</div>
+
+<div class="comic-title">${comic.name}</div>
+
+<div class="comic-price">${comic.price.toLocaleString()} đ</div>
+
+<button class="add-cart-btn">Thêm vào giỏ</button>
+`;
+
+card.querySelector(".add-cart-btn").onclick=()=>{
+alert("Đã thêm \""+comic.name+"\" vào giỏ!");
+};
+
+container.appendChild(card);
+
+}
+
+addSection("TRUYỆN NHẬT BẢN","jp");
+comics.filter(c=>c.type==="jp").forEach(addComic);
+
+addSection("TRUYỆN HÀN QUỐC","kr");
+comics.filter(c=>c.type==="kr").forEach(addComic);
+
+addSection("TRUYỆN TRUNG QUỐC","cn");
+comics.filter(c=>c.type==="cn").forEach(addComic);</script>
+<div class="footer-top">
+
+<div class="footer-col">
+<h3>GIỚI THIỆU</h3>
+<p>
+Web Truyện Tranh Online là nơi tổng hợp các bộ truyện hot nhất từ Nhật Bản,
+Hàn Quốc và Trung Quốc. Cập nhật nhanh chóng, hình ảnh chất lượng cao,
+giao diện thân thiện giúp bạn dễ dàng tìm kiếm và trải nghiệm đọc truyện.
+</p>
+<p>#truyentranh #webtruyen #anime</p>
+<p>protect by @traiambatukam</p>
+</div>
+
+<div class="footer-col">
+<h3>HỖ TRỢ</h3>
+<p>Giới thiệu</p>
+<p>Liên hệ</p>
+<p>Chính sách bảo mật</p>
+<p>Điều khoản sử dụng</p>
+<p>FAQ</p>
+</div>
+
+<div class="footer-col">
+<h3>THÔNG TIN LIÊN HỆ</h3>
+<li> <p>Địa chỉ: 8 Thái Thị Nhạn, P. Bảy Hiền, Tân Bình, TP.HCM</p> </li>
+<li> <p>Hotline: 0123456789</p> </li>
+<li> <p>Email: truyenhay@gmail.com</p> </li>
+</div>
+
+</div>
+
+<footer class="footer" id="contact">
+    <p>© 2026 Đồ Án Nhóm 5 - Thiết Kế Web. Bản quyền thuộc về Nhóm 5.</p>
+</footer>
+<script>
+document.querySelector(".logo").onclick = () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+};
+</script>
+</body>
+</html>
